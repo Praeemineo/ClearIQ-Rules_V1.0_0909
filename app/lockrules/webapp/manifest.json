@@ -1,0 +1,575 @@
+{
+  "_version": "1.86.0",
+  "sap.app": {
+    "id": "lockrules",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.31.0",
+      "toolsId": "bb718a51-e4bd-4433-9f02-460334b655e9"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/rules/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "lockrules-manage": {
+          "semanticObject": "lockrules",
+          "action": "manage",
+          "title": "{{lockrules-manage.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "lockrules"
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.151.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {},
+        "sap.f": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "lockrules.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {
+        "flexibleColumnLayout": {
+          "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
+          "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+        },
+        "routerClass": "sap.f.routing.Router"
+      },
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "RulesList",
+          "target": [
+            "RulesList"
+          ]
+        },
+        {
+          "pattern": "Rules({key}):?query:",
+          "name": "RulesObjectPage",
+          "target": [
+            "RulesList",
+            "RulesObjectPage"
+          ]
+        },
+        {
+          "pattern": "Rules({key})/approvalSteps({key2}):?query:",
+          "name": "ApprovalStepsObjectPage",
+          "target": [
+            "RulesList",
+            "RulesObjectPage",
+            "ApprovalStepsObjectPage"
+          ]
+        },
+        {
+          "pattern": "Rules({key})/checkConditionSteps({key2}):?query:",
+          "name": "CheckConditionStepsObjectPage",
+          "target": [
+            "RulesList",
+            "RulesObjectPage",
+            "CheckConditionStepsObjectPage"
+          ]
+        },
+        {
+          "pattern": "Rules({key})/setVariablesSteps({key2}):?query:",
+          "name": "SetVariablesStepsObjectPage",
+          "target": [
+            "RulesList",
+            "RulesObjectPage",
+            "SetVariablesStepsObjectPage"
+          ]
+        },
+        {
+          "pattern": "Rules({key})/apiMappingSteps({key2}):?query:",
+          "name": "ApiMappingStepsObjectPage",
+          "target": [
+            "RulesList",
+            "RulesObjectPage",
+            "ApiMappingStepsObjectPage"
+          ]
+        },
+        {
+          "pattern": "Rules({key})/aiMappingSteps({key2}):?query:",
+          "name": "AiMappingStepsObjectPage",
+          "target": [
+            "RulesList",
+            "RulesObjectPage",
+            "AiMappingStepsObjectPage"
+          ]
+        },
+        {
+          "pattern": "Rules({key})/fieldMappingSteps({key2}):?query:",
+          "name": "FieldMappingStepsObjectPage",
+          "target": [
+            "RulesList",
+            "RulesObjectPage",
+            "FieldMappingStepsObjectPage"
+          ]
+        },
+        {
+          "pattern": "Rules({key})/callActionSteps({key2}):?query:",
+          "name": "CallActionStepsObjectPage",
+          "target": [
+            "RulesList",
+            "RulesObjectPage",
+            "CallActionStepsObjectPage"
+          ]
+        },
+        {
+          "pattern": "Rules({key})/configurationSteps({key2}):?query:",
+          "name": "ConfigurationStepsObjectPage",
+          "target": [
+            "RulesList",
+            "RulesObjectPage",
+            "ConfigurationStepsObjectPage"
+          ]
+        },
+        {
+          "pattern": "Rules({key})/toleranceLimitSteps({key2}):?query:",
+          "name": "ToleranceLimitStepsObjectPage",
+          "target": [
+            "RulesList",
+            "RulesObjectPage",
+            "ToleranceLimitStepsObjectPage"
+          ]
+        },
+        {
+          "pattern": "Rules({key})/postToGLSteps({key2}):?query:",
+          "name": "PostToGLStepsObjectPage",
+          "target": [
+            "RulesList",
+            "RulesObjectPage",
+            "PostToGLStepsObjectPage"
+          ]
+        },
+        {
+          "pattern": "ToleranceKeys:?query:",
+          "name": "ToleranceKeysList",
+          "target": "ToleranceKeysList"
+        },
+        {
+          "pattern": "ToleranceKeys({key}):?query:",
+          "name": "ToleranceKeysObjectPage",
+          "target": "ToleranceKeysObjectPage"
+        }
+      ],
+      "targets": {
+        "RulesList": {
+          "type": "Component",
+          "id": "RulesList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/Rules",
+              "variantManagement": "Page",
+              "navigation": {
+                "Rules": {
+                  "detail": {
+                    "route": "RulesObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                }
+              }
+            }
+          },
+          "controlAggregation": "beginColumnPages",
+          "contextPattern": ""
+        },
+        "RulesObjectPage": {
+          "type": "Component",
+          "id": "RulesObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Rules",
+              "content": {
+              "header": {
+                "actions": {
+                  "ViewFlowAction": {
+                    "id": "viewFlowAction",
+                    "text": "View Flow",
+                    "press": "lockrules.ext.handler.RuleFlow.onViewFlow"
+                  }
+                }
+              }
+            },
+              "navigation": {
+                "approvalSteps": {
+                  "detail": {
+                    "route": "ApprovalStepsObjectPage"
+                  }
+                },
+                "checkConditionSteps": {
+                  "detail": {
+                    "route": "CheckConditionStepsObjectPage"
+                  }
+                },
+                "setVariablesSteps": {
+                  "detail": {
+                    "route": "SetVariablesStepsObjectPage"
+                  }
+                },
+                "apiMappingSteps": {
+                  "detail": {
+                    "route": "ApiMappingStepsObjectPage"
+                  }
+                },
+                "aiMappingSteps": {
+                  "detail": {
+                    "route": "AiMappingStepsObjectPage"
+                  }
+                },
+                "fieldMappingSteps": {
+                  "detail": {
+                    "route": "FieldMappingStepsObjectPage"
+                  }
+                },
+                "callActionSteps": {
+                  "detail": {
+                    "route": "CallActionStepsObjectPage"
+                  }
+                },
+                "configurationSteps": {
+                  "detail": {
+                    "route": "ConfigurationStepsObjectPage"
+                  }
+                },
+                "toleranceLimitSteps": {
+                  "detail": {
+                    "route": "ToleranceLimitStepsObjectPage"
+                  }
+                },
+                "postToGLSteps": {
+                  "detail": {
+                    "route": "PostToGLStepsObjectPage"
+                  }
+                }
+              }
+            }
+          },
+          "controlAggregation": "midColumnPages",
+          "contextPattern": "/Rules({key})"
+        },
+        "ApprovalStepsObjectPage": {
+          "type": "Component",
+          "id": "ApprovalStepsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Rules/approvalSteps"
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/Rules({key})/approvalSteps({key2})"
+        },
+        "CheckConditionStepsObjectPage": {
+          "type": "Component",
+          "id": "CheckConditionStepsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Rules/checkConditionSteps",
+              "controlConfiguration": {
+                "conditions": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                },
+                "conditions/@com.sap.vocabularies.UI.v1.LineItem": {
+                  "columns": {
+                    "operator": {
+                      "type": "ForField",
+                      "properties": {
+                        "editMode": "Editable"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/Rules({key})/checkConditionSteps({key2})"
+        },
+        "SetVariablesStepsObjectPage": {
+          "type": "Component",
+          "id": "SetVariablesStepsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Rules/setVariablesSteps"
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/Rules({key})/setVariablesSteps({key2})"
+        },
+        "ApiMappingStepsObjectPage": {
+          "type": "Component",
+          "id": "ApiMappingStepsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Rules/apiMappingSteps",
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.FieldGroup#GeneratedGroup": {
+                  "fields": {
+                    "sourceType": {
+                      "type": "ForField",
+                      "properties": {
+                        "editMode": "Editable"
+                      }
+                    },
+                    "method": {
+                      "type": "ForField",
+                      "properties": {
+                        "editMode": "Editable"
+                      }
+                    },
+                    "destination": {
+                      "type": "ForField",
+                      "properties": {
+                        "editMode": "Editable"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/Rules({key})/apiMappingSteps({key2})"
+        },
+        "AiMappingStepsObjectPage": {
+          "type": "Component",
+          "id": "AiMappingStepsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Rules/aiMappingSteps"
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/Rules({key})/aiMappingSteps({key2})"
+        },
+        "FieldMappingStepsObjectPage": {
+          "type": "Component",
+          "id": "FieldMappingStepsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Rules/fieldMappingSteps",
+              "controlConfiguration": {
+                "fieldMappings": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                },
+                "fieldMappings/@com.sap.vocabularies.UI.v1.LineItem": {
+                  "columns": {
+                    "ruleType": {
+                      "type": "ForField",
+                      "properties": {
+                        "editMode": "Editable"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/Rules({key})/fieldMappingSteps({key2})"
+        },
+        "CallActionStepsObjectPage": {
+          "type": "Component",
+          "id": "CallActionStepsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Rules/callActionSteps"
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/Rules({key})/callActionSteps({key2})"
+        },
+        "ConfigurationStepsObjectPage": {
+          "type": "Component",
+          "id": "ConfigurationStepsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Rules/configurationSteps"
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/Rules({key})/configurationSteps({key2})"
+        },
+        "ToleranceLimitStepsObjectPage": {
+          "type": "Component",
+          "id": "ToleranceLimitStepsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Rules/toleranceLimitSteps"
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/Rules({key})/toleranceLimitSteps({key2})"
+        },
+        "PostToGLStepsObjectPage": {
+          "type": "Component",
+          "id": "PostToGLStepsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Rules/postToGLSteps"
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/Rules({key})/postToGLSteps({key2})"
+        },
+        "ToleranceKeysList": {
+          "type": "Component",
+          "id": "ToleranceKeysList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/ToleranceKeys",
+              "variantManagement": "Page",
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable",
+                    "creationMode": {
+                      "name": "Inline"
+                    }
+                  }
+                }
+              },
+              "navigation": {
+                "ToleranceKeys": {
+                  "detail": {
+                    "route": "ToleranceKeysObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ToleranceKeysObjectPage": {
+          "type": "Component",
+          "id": "ToleranceKeysObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ToleranceKeys"
+            }
+          }
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+      "type": "XML",
+      "async": true,
+      "id": "appRootView"
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  },
+  "sap.fe": {
+    "app": {
+      "enableLazyLoading": false
+    }
+  }
+}

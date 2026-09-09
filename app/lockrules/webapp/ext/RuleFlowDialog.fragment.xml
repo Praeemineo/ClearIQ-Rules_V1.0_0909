@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+  <Dialog title="Rule Execution Flow" resizable="true" draggable="true">
+    <content>
+      <ScrollContainer height="100%" vertical="true" horizontal="true">
+        <core:HTML id="flowHtml" content="&lt;div/&gt;"/>
+      </ScrollContainer>
+    </content>
+    <endButton>
+      <Button text="Close" press="onCloseFlow"/>
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>

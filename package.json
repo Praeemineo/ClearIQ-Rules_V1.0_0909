@@ -1,0 +1,64 @@
+{
+  "name": "lockbox_rules_backend",
+  "version": "1.0.0",
+  "dependencies": {
+    "@sap/cds": "^9",
+    "@sap/xssec": "^4",
+    "@cap-js/postgres": "^2.3.0"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": "^9",
+    "cds-plugin-ui5": "^0.17.0",
+    "rimraf": "^5.0.5",
+    "mbt": "^1.2.49"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-lockrules": "cds watch --open lockrules/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "undeploy": "cf undeploy lockbox_rules_backend --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-configuration": "cds watch --open configuration/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-lockbox_resoncode": "cds watch --open lockboxresoncode/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-lockbox_reasoncode": "cds watch --open lockboxreasoncode/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/lockrules",
+    "app/configuration",
+    "app/lockbox_resoncode",
+    "app/lockbox_reasoncode"
+  ],
+  "cds": {
+    "requires": {
+      "[production]": {
+        "auth": "xsuaa",
+        "db": {
+          "impl": "@cap-js/postgres",
+          "kind": "postgres",
+          "dialect": "postgres",
+          "vcap": {
+            "label": "postgresql-db"
+          },
+          "pool": {
+            "min": 0,
+            "max": 10,
+            "testOnBorrow": true,
+            "acquireTimeoutMillis": 1000,
+            "destroyTimeoutMillis": 1000
+          },
+          "schema": "Schema_Lockbox_Rules",
+          "schema_evolution": false,
+          "deploy": {
+            "auto": false,
+            "auto-undeploy": false
+          }
+        }
+      }
+    }
+  }
+}

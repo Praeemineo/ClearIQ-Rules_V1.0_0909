@@ -1,0 +1,22 @@
+code,name
+CompanyCode,Company Code
+PartnerBankAccount,Partner Bank Account
+DeductionAmountInPaytCurrency,Deduction Amount
+DepositDateTime,Deposit Date and Time
+Customer,Customer
+FiscalYear,Fiscal Year
+Currency,Currency
+LockboxBatchOrigin,LockboxBatchOrigin
+Lockbox,Lockbox Number
+PaymentAdviceAccountType,Account Type
+Cheque,Check Number
+PaymentAdviceAccount,Account Number
+PaymentAdvice,Payment Advice Number
+AssignmentReference,Assignment Number
+NetPaymentAmountInPaytCurrency,Invoice Amount
+AmountInTransactionCurrency,Payment/Cheque Amount
+PartnerBank,Partner Bank Code
+LockboxBatchDestination,LockboxBatchDestination
+PaymentReference,Payment Reference
+DocumentReferenceID,Document Reference ID
+PaymentDifferenceReason,Payment Different Reason

@@ -1,0 +1,20 @@
+{
+  "xsappname": "lockbox_rules_backend-${org}-${space}",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.ClearIQRuleAdmin",
+      "description": "Full access to Lockbox Rules Engine"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "ClearIQRuleAdmin",
+      "description": "ClearIQ Rule Admin",
+      "scope-references": [
+        "$XSAPPNAME.ClearIQRuleAdmin"
+      ],
+      "attribute-references": []
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+code,name
+EQUALS,Equals
+NOT_EQUALS,Not Equals
+GREATER_THAN,Greater Than
+GREATER_OR_EQUAL,Greater or Equal
+LESS_THAN,Less Than
+LESS_OR_EQUAL,Less or Equal
+CONTAINS,Contains
+NOT_CONTAINS,Not Contains
+STARTS_WITH,Starts With
+ENDS_WITH,Ends With
+MATCHES_REGEX,Matches Regex
+IS_EMPTY,Is Empty
+IS_NOT_EMPTY,Is Not Empty
+IS_NULL,Is Null
+IS_NOT_NULL,Is Not Null
+RECORD_EXISTS,Exists
+RECORD_NOT_EXISTS,Not Exists
+BETWEEN,Between
+NOT_BETWEEN,Not Between
+IN,In List
+NOT_IN,Not In List
+BEFORE,Before
+AFTER,After
+ON,On Date
+THIS_WEEK,This Week
+THIS_MONTH,This Month
+THIS_YEAR,This Year
+LAST_N_DAYS,Last N Days
+NEXT_N_DAYS,Next N Days

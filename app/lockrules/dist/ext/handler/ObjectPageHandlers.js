@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/Component"],function(e){"use strict";return{onManageToleranceKeys:function(o,n,r){var t=r.getModel();var a=e.registry.filter(function(e){return e.getModel&&e.getModel()===t})[0];if(!a||!a.getRouter){console.error("onManageToleranceKeys: could not resolve owning UIComponent for router navigation");return}t.refresh();a.getRouter().navTo("ToleranceKeysList")}}});
+//# sourceMappingURL=ObjectPageHandlers.js.map
