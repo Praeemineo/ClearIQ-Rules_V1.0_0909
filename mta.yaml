@@ -12,7 +12,7 @@ modules:
     NODE_ENV: production
   requires:
   - name: lockbox_rules_backend-auth
-  - name: Postgresql
+  - name: PostgresqlQAS
   - name: lockbox_rules_backend-destination-service
   provides:
   - name: srv-api
@@ -30,7 +30,7 @@ modules:
     CDS_CONFIG: |
       {"requires":{"db":{"credentials":{"schema":"Schema_Lockbox_Rules"}}}}
   requires:
-  - name: Postgresql
+  - name: PostgresqlQAS
   
   parameters:
     buildpack: nodejs_buildpack
@@ -129,10 +129,10 @@ modules:
     - npm run build:cf
     supported-platforms: []
 resources:
-- name: Postgresql
+- name: PostgresqlQAS
   type: org.cloudfoundry.existing-service
   parameters:
-    service-name: Postgresql
+    service-name: PostgresqlQAS
 - name: lockbox_rules_backend-repo-host
   type: org.cloudfoundry.managed-service
   parameters:
