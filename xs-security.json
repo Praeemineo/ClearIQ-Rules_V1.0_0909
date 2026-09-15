@@ -1,5 +1,5 @@
 {
-  "xsappname": "lockbox_rules_backend-${org}-${space}",
+  "xsappname": "lockbox_rules_backend-XSUAA",
   "tenant-mode": "dedicated",
   "scopes": [
     {

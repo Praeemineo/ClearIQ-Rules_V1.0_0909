@@ -175,7 +175,7 @@ resources:
         - binding-secret
         - x509
       tenant-mode: dedicated
-      xsappname: lockbox_rules_backend-${org}-${space}
+      xsappname: lockbox_rules_backend-XSUAA
     path: ./xs-security.json
     service: xsuaa
     service-plan: application
